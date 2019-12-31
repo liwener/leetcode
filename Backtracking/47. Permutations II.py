@@ -24,7 +24,7 @@ class Solution:
         for i in range(len(array)):
             if not used[i]:
                 # array[i] 和 array[i-1]的值相等，且array[i-1]没被用过（之后可能会被用就产生重复）
-                if i > 0 and array[i] == array[ i -1] and not used[ i -1]:
+                if i > 0 and array[i] == array[i -1] and not used[i -1]:
                     continue
 
                 used[i] = True

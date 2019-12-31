@@ -14,7 +14,7 @@ class Solution:
         self.helper(candidates, 0, target, [], res)
         return res
 
-    def helper(self, array, index, tar, path, res):
+    def helper(self, array, start, tar, path, res):
         # 剪枝操作
         if tar < 0:
             return
@@ -22,7 +22,7 @@ class Solution:
             res.append(path[:])
             return
 
-        for i in range(index, len(array)):
+        for i in range(start, len(array)):
             path.append(array[i])
             # 因为数字可以无限制重复被选取，因此起始位置还是自己
             self.helper(array, i, tar-array[i], path, res)

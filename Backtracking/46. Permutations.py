@@ -9,9 +9,9 @@ class Solution:
         if nums == None:
             return []
 
-        used = [False ] *len(nums)
+        used = [False] * len(nums)
         res = []
-        self.helper(nums ,0 ,[] ,used ,res)
+        self.helper(nums, 0, [], used, res)
         return res
 
     def helper(self, nums, index, path, used, res):
@@ -23,6 +23,6 @@ class Solution:
             if not used[i]:
                 used[i] = True
                 path.append(nums[i])
-                self.helper(nums ,index +1 ,path ,used ,res)
+                self.helper(nums, index + 1, path, used, res)
                 used[i] = False
                 path.pop()

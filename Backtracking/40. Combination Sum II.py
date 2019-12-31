@@ -13,18 +13,18 @@ class Solution:
         self.helper(candidates, 0, target, [], res)
         return res
 
-    def helper(self, array, index, tar, path, res):
+    def helper(self, array, start, tar, path, res):
         # 剪枝
         if tar < 0:
             return
         if tar == 0:
             res.append(path[:])
             return
-        for i in range(index, len(array)):
+        for i in range(start, len(array)):
             #  "剪枝" 检测到重复分支的条件：
             # （1）不是这一层的第一个分支
             # （2）当前选出来的数和前一个分支相等
-            if i > index and array[i] == array[i - 1]:
+            if i > start and array[i] == array[i - 1]:
                 continue
             path.append(array[i])
             self.helper(array, i + 1, tar - array[i], path, res)
