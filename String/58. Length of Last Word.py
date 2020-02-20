@@ -10,7 +10,6 @@
 """
 
 
-
 class Solution:
     def lengthOfLastWord(self, s: str) -> int:
         le, end = 0, len(s) - 1
